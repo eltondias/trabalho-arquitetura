@@ -1,0 +1,30 @@
+{
+    "name": "Enquadramento",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "limite",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "empresa",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "enquadramento"
+        }
+    ],
+    "changelogDate": "20181031213736",
+    "entityTableName": "enquadramento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-plano-empresa-heading">Create or edit a Plano Empresa</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!planoEmpresa.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="planoEmpresa.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_funcionarios">Funcionarios</label>
+                    <input type="number" class="form-control" name="funcionarios" id="field_funcionarios"
+                        [(ngModel)]="planoEmpresa.funcionarios" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_socios">Socios</label>
+                    <input type="number" class="form-control" name="socios" id="field_socios"
+                        [(ngModel)]="planoEmpresa.socios" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_faturamentoMensal">Faturamento Mensal</label>
+                    <input type="number" class="form-control" name="faturamentoMensal" id="field_faturamentoMensal"
+                        [(ngModel)]="planoEmpresa.faturamentoMensal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataContratacao">Data Contratacao</label>
+                    <input type="text" class="form-control" name="dataContratacao" id="field_dataContratacao"
+                        [(ngModel)]="planoEmpresa.dataContratacao" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataEncerramento">Data Encerramento</label>
+                    <input type="text" class="form-control" name="dataEncerramento" id="field_dataEncerramento"
+                        [(ngModel)]="planoEmpresa.dataEncerramento" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" [(ngModel)]="planoEmpresa.empresa" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresaOption.id === planoEmpresa.empresa?.id ? planoEmpresa.empresa : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackEmpresaById">{{empresaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_planoContabil">Plano Contabil</label>
+                    <select class="form-control" id="field_planoContabil" name="planoContabil" [(ngModel)]="planoEmpresa.planoContabil" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="planoContabilOption.id === planoEmpresa.planoContabil?.id ? planoEmpresa.planoContabil : planoContabilOption" *ngFor="let planoContabilOption of planocontabils; trackBy: trackPlanoContabilById">{{planoContabilOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_planoContaAzul">Plano Conta Azul</label>
+                    <select class="form-control" id="field_planoContaAzul" name="planoContaAzul" [(ngModel)]="planoEmpresa.planoContaAzul" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="planoContaAzulOption.id === planoEmpresa.planoContaAzul?.id ? planoEmpresa.planoContaAzul : planoContaAzulOption" *ngFor="let planoContaAzulOption of planocontaazuls; trackBy: trackPlanoContaAzulById">{{planoContaAzulOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

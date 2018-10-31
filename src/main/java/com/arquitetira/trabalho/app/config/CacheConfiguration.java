@@ -41,6 +41,28 @@ public class CacheConfiguration {
             cm.createCache(com.arquitetira.trabalho.app.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.arquitetira.trabalho.app.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.arquitetira.trabalho.app.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Endereco.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Ramo.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Ramo.class.getName() + ".empresas", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Enquadramento.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Enquadramento.class.getName() + ".empresas", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Empresa.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Empresa.class.getName() + ".planoEmpresas", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.Empresa.class.getName() + ".enderecos", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PeriodoPagamento.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PeriodoPagamento.class.getName() + ".descontoGrupos", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PeriodoPagamento.class.getName() + ".descontoPlanoContabils", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.GrupoContaAzul.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.GrupoContaAzul.class.getName() + ".planoContaAzuls", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.GrupoContaAzul.class.getName() + ".descontoGrupos", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.DescontoGrupo.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.DescontoPlanoContabil.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PlanoContabil.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PlanoContabil.class.getName() + ".planoEmpresas", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PlanoContabil.class.getName() + ".descontoPlanoContabils", jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PlanoEmpresa.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PlanoContaAzul.class.getName(), jcacheConfiguration);
+            cm.createCache(com.arquitetira.trabalho.app.domain.PlanoContaAzul.class.getName() + ".planoEmpresas", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

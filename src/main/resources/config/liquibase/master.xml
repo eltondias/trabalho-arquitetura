@@ -5,6 +5,23 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213734_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213735_added_entity_Ramo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213736_added_entity_Enquadramento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213737_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213738_added_entity_PeriodoPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213739_added_entity_GrupoContaAzul.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213740_added_entity_DescontoGrupo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213741_added_entity_DescontoPlanoContabil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213742_added_entity_PlanoContabil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213743_added_entity_PlanoEmpresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213744_added_entity_PlanoContaAzul.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181031213734_added_entity_constraints_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213737_added_entity_constraints_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213740_added_entity_constraints_DescontoGrupo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213741_added_entity_constraints_DescontoPlanoContabil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213743_added_entity_constraints_PlanoEmpresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181031213744_added_entity_constraints_PlanoContaAzul.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

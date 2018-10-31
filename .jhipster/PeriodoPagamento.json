@@ -1,0 +1,32 @@
+{
+    "name": "PeriodoPagamento",
+    "fields": [
+        {
+            "fieldName": "periodo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "descontoGrupo",
+            "otherEntityName": "descontoGrupo",
+            "otherEntityRelationshipName": "periodoPagamento"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "descontoPlanoContabil",
+            "otherEntityName": "descontoPlanoContabil",
+            "otherEntityRelationshipName": "periodoPagamento"
+        }
+    ],
+    "changelogDate": "20181031213738",
+    "entityTableName": "periodo_pagamento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

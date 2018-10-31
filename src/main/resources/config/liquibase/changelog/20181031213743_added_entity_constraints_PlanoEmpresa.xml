@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity PlanoEmpresa.
+    -->
+    <changeSet id="20181031213743-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="plano_empresa"
+                                 constraintName="fk_plano_empresa_empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="plano_contabil_id"
+                                 baseTableName="plano_empresa"
+                                 constraintName="fk_plano_empresa_plano_contabil_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="plano_contabil"/>
+
+        <addForeignKeyConstraint baseColumnNames="plano_conta_azul_id"
+                                 baseTableName="plano_empresa"
+                                 constraintName="fk_plano_empresa_plano_conta_azul_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="plano_conta_azul"/>
+
+    </changeSet>
+</databaseChangeLog>

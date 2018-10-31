@@ -1,0 +1,32 @@
+{
+    "name": "DescontoPlanoContabil",
+    "fields": [
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "periodoPagamento",
+            "otherEntityName": "periodoPagamento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "planoContabil",
+            "otherEntityName": "planoContabil",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031213741",
+    "entityTableName": "desconto_plano_contabil",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="planoEmpresa">
+            <h2><span>Plano Empresa</span> {{planoEmpresa.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Funcionarios</span></dt>
+                <dd>
+                    <span>{{planoEmpresa.funcionarios}}</span>
+                </dd>
+                <dt><span>Socios</span></dt>
+                <dd>
+                    <span>{{planoEmpresa.socios}}</span>
+                </dd>
+                <dt><span>Faturamento Mensal</span></dt>
+                <dd>
+                    <span>{{planoEmpresa.faturamentoMensal}}</span>
+                </dd>
+                <dt><span>Data Contratacao</span></dt>
+                <dd>
+                    <span>{{planoEmpresa.dataContratacao}}</span>
+                </dd>
+                <dt><span>Data Encerramento</span></dt>
+                <dd>
+                    <span>{{planoEmpresa.dataEncerramento}}</span>
+                </dd>
+                <dt><span>Empresa</span></dt>
+                <dd>
+                    <div *ngIf="planoEmpresa.empresa">
+                        <a [routerLink]="['/empresa', planoEmpresa.empresa?.id, 'view']">{{planoEmpresa.empresa?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Plano Contabil</span></dt>
+                <dd>
+                    <div *ngIf="planoEmpresa.planoContabil">
+                        <a [routerLink]="['/plano-contabil', planoEmpresa.planoContabil?.id, 'view']">{{planoEmpresa.planoContabil?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Plano Conta Azul</span></dt>
+                <dd>
+                    <div *ngIf="planoEmpresa.planoContaAzul">
+                        <a [routerLink]="['/plano-conta-azul', planoEmpresa.planoContaAzul?.id, 'view']">{{planoEmpresa.planoContaAzul?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plano-empresa', planoEmpresa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

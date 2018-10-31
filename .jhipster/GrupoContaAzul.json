@@ -1,0 +1,32 @@
+{
+    "name": "GrupoContaAzul",
+    "fields": [
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "planoContaAzul",
+            "otherEntityName": "planoContaAzul",
+            "otherEntityRelationshipName": "grupoContaAzul"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "descontoGrupo",
+            "otherEntityName": "descontoGrupo",
+            "otherEntityRelationshipName": "grupoContaAzul"
+        }
+    ],
+    "changelogDate": "20181031213739",
+    "entityTableName": "grupo_conta_azul",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

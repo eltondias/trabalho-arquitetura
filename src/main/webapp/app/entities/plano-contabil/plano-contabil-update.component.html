@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-plano-contabil-heading">Create or edit a Plano Contabil</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!planoContabil.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="planoContabil.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_funcionarios">Funcionarios</label>
+                    <input type="number" class="form-control" name="funcionarios" id="field_funcionarios"
+                        [(ngModel)]="planoContabil.funcionarios" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_socios">Socios</label>
+                    <input type="number" class="form-control" name="socios" id="field_socios"
+                        [(ngModel)]="planoContabil.socios" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_faturamentoMensal">Faturamento Mensal</label>
+                    <input type="number" class="form-control" name="faturamentoMensal" id="field_faturamentoMensal"
+                        [(ngModel)]="planoContabil.faturamentoMensal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataContratacao">Data Contratacao</label>
+                    <div class="d-flex">
+                        <input id="field_dataContratacao" type="datetime-local" class="form-control" name="dataContratacao" [(ngModel)]="dataContratacao"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataEncerramento">Data Encerramento</label>
+                    <div class="d-flex">
+                        <input id="field_dataEncerramento" type="datetime-local" class="form-control" name="dataEncerramento" [(ngModel)]="dataEncerramento"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

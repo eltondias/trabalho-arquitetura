@@ -1,0 +1,73 @@
+
+
+entity Endereco {
+  logradouro String
+}
+
+entity Ramo {
+  nome String
+  descricao String
+}
+
+entity Enquadramento {
+  nome String
+  limite Long
+}
+
+entity Empresa {
+  nome String
+}
+
+entity PeriodoPagamento {
+  periodo String
+}
+
+entity GrupoContaAzul {
+  estado Boolean
+}
+
+entity DescontoGrupo {
+  estado Boolean
+}
+
+entity DescontoPlanoContabil {
+  estado Boolean
+}
+
+entity PlanoContabil {
+	funcionarios Long
+    socios Long
+    faturamentoMensal Long
+    dataContratacao Instant
+    dataEncerramento Instant
+}
+
+entity PlanoEmpresa {
+	funcionarios Long
+    socios Long
+    faturamentoMensal Long
+    dataContratacao String
+    dataEncerramento String
+}
+
+entity PlanoContaAzul {
+	 plano Long
+}
+ 
+ relationship OneToMany {
+ 	PlanoContabil{PlanoEmpresa} to PlanoEmpresa,
+    PlanoContaAzul{PlanoEmpresa} to PlanoEmpresa,
+     GrupoContaAzul{PlanoContaAzul} to PlanoContaAzul,
+  	Empresa{PlanoEmpresa} to PlanoEmpresa,
+    Enquadramento{Empresa} to Empresa,
+    Ramo{Empresa} to Empresa,
+    GrupoContaAzul{DescontoGrupo} to DescontoGrupo,
+  	PeriodoPagamento{DescontoGrupo} to DescontoGrupo,
+    PlanoContabil{DescontoPlanoContabil} to DescontoPlanoContabil,
+  	PeriodoPagamento{DescontoPlanoContabil} to DescontoPlanoContabil,
+    Empresa {Endereco} to Endereco
+}
+
+ 
+
+ 

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empresa">
+            <h2><span>Empresa</span> {{empresa.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nome</span></dt>
+                <dd>
+                    <span>{{empresa.nome}}</span>
+                </dd>
+                <dt><span>Ramo</span></dt>
+                <dd>
+                    <div *ngIf="empresa.ramo">
+                        <a [routerLink]="['/ramo', empresa.ramo?.id, 'view']">{{empresa.ramo?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Enquadramento</span></dt>
+                <dd>
+                    <div *ngIf="empresa.enquadramento">
+                        <a [routerLink]="['/enquadramento', empresa.enquadramento?.id, 'view']">{{empresa.enquadramento?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empresa', empresa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

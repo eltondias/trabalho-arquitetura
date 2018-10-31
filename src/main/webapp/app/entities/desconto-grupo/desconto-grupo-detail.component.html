@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="descontoGrupo">
+            <h2><span>Desconto Grupo</span> {{descontoGrupo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Estado</span></dt>
+                <dd>
+                    <span>{{descontoGrupo.estado}}</span>
+                </dd>
+                <dt><span>Periodo Pagamento</span></dt>
+                <dd>
+                    <div *ngIf="descontoGrupo.periodoPagamento">
+                        <a [routerLink]="['/periodo-pagamento', descontoGrupo.periodoPagamento?.id, 'view']">{{descontoGrupo.periodoPagamento?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Grupo Conta Azul</span></dt>
+                <dd>
+                    <div *ngIf="descontoGrupo.grupoContaAzul">
+                        <a [routerLink]="['/grupo-conta-azul', descontoGrupo.grupoContaAzul?.id, 'view']">{{descontoGrupo.grupoContaAzul?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/desconto-grupo', descontoGrupo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
