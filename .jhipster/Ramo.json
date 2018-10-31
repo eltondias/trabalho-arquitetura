@@ -1,0 +1,30 @@
+{
+    "name": "Ramo",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "empresa",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "ramo"
+        }
+    ],
+    "changelogDate": "20181031213735",
+    "entityTableName": "ramo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

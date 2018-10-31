@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-desconto-grupo-heading">Create or edit a Desconto Grupo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!descontoGrupo.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="descontoGrupo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_estado">Estado</label>
+                    <input type="checkbox" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="descontoGrupo.estado" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_periodoPagamento">Periodo Pagamento</label>
+                    <select class="form-control" id="field_periodoPagamento" name="periodoPagamento" [(ngModel)]="descontoGrupo.periodoPagamento" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="periodoPagamentoOption.id === descontoGrupo.periodoPagamento?.id ? descontoGrupo.periodoPagamento : periodoPagamentoOption" *ngFor="let periodoPagamentoOption of periodopagamentos; trackBy: trackPeriodoPagamentoById">{{periodoPagamentoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_grupoContaAzul">Grupo Conta Azul</label>
+                    <select class="form-control" id="field_grupoContaAzul" name="grupoContaAzul" [(ngModel)]="descontoGrupo.grupoContaAzul" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="grupoContaAzulOption.id === descontoGrupo.grupoContaAzul?.id ? descontoGrupo.grupoContaAzul : grupoContaAzulOption" *ngFor="let grupoContaAzulOption of grupocontaazuls; trackBy: trackGrupoContaAzulById">{{grupoContaAzulOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

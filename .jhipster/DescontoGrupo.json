@@ -1,0 +1,32 @@
+{
+    "name": "DescontoGrupo",
+    "fields": [
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "periodoPagamento",
+            "otherEntityName": "periodoPagamento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "grupoContaAzul",
+            "otherEntityName": "grupoContaAzul",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031213740",
+    "entityTableName": "desconto_grupo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

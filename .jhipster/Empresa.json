@@ -1,0 +1,44 @@
+{
+    "name": "Empresa",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "ramo",
+            "otherEntityName": "ramo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "enquadramento",
+            "otherEntityName": "enquadramento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "planoEmpresa",
+            "otherEntityName": "planoEmpresa",
+            "otherEntityRelationshipName": "empresa"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "endereco",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "empresa"
+        }
+    ],
+    "changelogDate": "20181031213737",
+    "entityTableName": "empresa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

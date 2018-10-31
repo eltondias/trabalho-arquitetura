@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="planoContabil">
+            <h2><span>Plano Contabil</span> {{planoContabil.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Funcionarios</span></dt>
+                <dd>
+                    <span>{{planoContabil.funcionarios}}</span>
+                </dd>
+                <dt><span>Socios</span></dt>
+                <dd>
+                    <span>{{planoContabil.socios}}</span>
+                </dd>
+                <dt><span>Faturamento Mensal</span></dt>
+                <dd>
+                    <span>{{planoContabil.faturamentoMensal}}</span>
+                </dd>
+                <dt><span>Data Contratacao</span></dt>
+                <dd>
+                    <span>{{planoContabil.dataContratacao}}</span>
+                </dd>
+                <dt><span>Data Encerramento</span></dt>
+                <dd>
+                    <span>{{planoContabil.dataEncerramento}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plano-contabil', planoContabil.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

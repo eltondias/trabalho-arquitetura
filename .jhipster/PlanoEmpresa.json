@@ -1,0 +1,54 @@
+{
+    "name": "PlanoEmpresa",
+    "fields": [
+        {
+            "fieldName": "funcionarios",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "socios",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "faturamentoMensal",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dataContratacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataEncerramento",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "empresa",
+            "otherEntityName": "empresa",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "planoContabil",
+            "otherEntityName": "planoContabil",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "planoContaAzul",
+            "otherEntityName": "planoContaAzul",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031213743",
+    "entityTableName": "plano_empresa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

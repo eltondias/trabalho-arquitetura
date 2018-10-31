@@ -1,0 +1,32 @@
+{
+    "name": "PlanoContaAzul",
+    "fields": [
+        {
+            "fieldName": "plano",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "grupoContaAzul",
+            "otherEntityName": "grupoContaAzul",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "planoEmpresa",
+            "otherEntityName": "planoEmpresa",
+            "otherEntityRelationshipName": "planoContaAzul"
+        }
+    ],
+    "changelogDate": "20181031213744",
+    "entityTableName": "plano_conta_azul",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

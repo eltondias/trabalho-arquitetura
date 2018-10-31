@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-desconto-plano-contabil-heading">Create or edit a Desconto Plano Contabil</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!descontoPlanoContabil.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="descontoPlanoContabil.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_estado">Estado</label>
+                    <input type="checkbox" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="descontoPlanoContabil.estado" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_periodoPagamento">Periodo Pagamento</label>
+                    <select class="form-control" id="field_periodoPagamento" name="periodoPagamento" [(ngModel)]="descontoPlanoContabil.periodoPagamento" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="periodoPagamentoOption.id === descontoPlanoContabil.periodoPagamento?.id ? descontoPlanoContabil.periodoPagamento : periodoPagamentoOption" *ngFor="let periodoPagamentoOption of periodopagamentos; trackBy: trackPeriodoPagamentoById">{{periodoPagamentoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_planoContabil">Plano Contabil</label>
+                    <select class="form-control" id="field_planoContabil" name="planoContabil" [(ngModel)]="descontoPlanoContabil.planoContabil" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="planoContabilOption.id === descontoPlanoContabil.planoContabil?.id ? descontoPlanoContabil.planoContabil : planoContabilOption" *ngFor="let planoContabilOption of planocontabils; trackBy: trackPlanoContabilById">{{planoContabilOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
